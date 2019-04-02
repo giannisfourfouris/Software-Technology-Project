@@ -1,0 +1,261 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Initializer</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1806.dao</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Initializer (gr.aueb.softeng.project1806.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Initializer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (98/ 98)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1806.dao;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import java.sql.Time;
+<i>5</i>&nbsp;import java.util.Calendar;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import gr.aueb.softeng.project1806.model.BusTimetable;
+<i>8</i>&nbsp;import gr.aueb.softeng.project1806.model.Leg;
+<i>9</i>&nbsp;import gr.aueb.softeng.project1806.model.Line;
+<i>10</i>&nbsp;import gr.aueb.softeng.project1806.model.Location;
+<i>11</i>&nbsp;import gr.aueb.softeng.project1806.model.Stop;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;/**
+<i>14</i>&nbsp; * ????? ??? ??????????? ?? ????????????? ???????? ??? ????? ?????????
+<i>15</i>&nbsp; * ??? ?? ??????? ?? ?????? ?? ??????????? ??????????? ??? ?????????? ???
+<i>16</i>&nbsp; * ?? ??????????? ???????
+<i>17</i>&nbsp; */
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;
+<b class="fc"><i>20</i>&nbsp;public abstract class Initializer {</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    /**
+<i>23</i>&nbsp;     * ??????? ??? ???????? ???? ??? ????????? ??? ?? ????
+<i>24</i>&nbsp;     */
+<i>25</i>&nbsp;    protected abstract void eraseData();
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    public void prepareData() {
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;        //??????????? ??? ?? ???????? ??? ????? ???? ????? ? ???????? ????
+<b class="fc"><i>30</i>&nbsp;        eraseData();</b>
+<i>31</i>&nbsp;
+<b class="fc"><i>32</i>&nbsp;        LocationDAO locationDAO = getLocationDAO();</b>
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;        Location loc1 = new Location(38.055874, 23.760772); //panagiotis</b>
+<b class="fc"><i>35</i>&nbsp;        Location loc2 = new Location(38.026500, 23.787736); //zisis</b>
+<b class="fc"><i>36</i>&nbsp;        Location loc3 = new Location(37.941309, 23.754832); //giannis</b>
+<b class="fc"><i>37</i>&nbsp;        Location loc4 = new Location(37.973571, 23.761745);</b>
+<b class="fc"><i>38</i>&nbsp;        Location loc5 = new Location(37.942070, 23.751098); //giannis</b>
+<b class="fc"><i>39</i>&nbsp;        Location loc6 = new Location(37.997609, 23.739466); //konta troias</b>
+<b class="fc"><i>40</i>&nbsp;        Location loc7 = new Location(38.055340, 23.764482); //panagiotis</b>
+<b class="fc"><i>41</i>&nbsp;        Location loc8 = new Location(37.995759, 23.736224); //troias</b>
+<b class="fc"><i>42</i>&nbsp;        Location loc9 = new Location(37.994205, 23.732004); //kentriko ktirio</b>
+<b class="fc"><i>43</i>&nbsp;        Location loc10 = new Location(38.026605, 23.787613); //zisis</b>
+<i>44</i>&nbsp;
+<b class="fc"><i>45</i>&nbsp;        locationDAO.add(loc1);</b>
+<b class="fc"><i>46</i>&nbsp;        locationDAO.add(loc2);</b>
+<b class="fc"><i>47</i>&nbsp;        locationDAO.add(loc3);</b>
+<b class="fc"><i>48</i>&nbsp;        locationDAO.add(loc4);</b>
+<b class="fc"><i>49</i>&nbsp;        locationDAO.add(loc5);</b>
+<b class="fc"><i>50</i>&nbsp;        locationDAO.add(loc6);</b>
+<b class="fc"><i>51</i>&nbsp;        locationDAO.add(loc7);</b>
+<b class="fc"><i>52</i>&nbsp;        locationDAO.add(loc8);</b>
+<b class="fc"><i>53</i>&nbsp;        locationDAO.add(loc9);</b>
+<b class="fc"><i>54</i>&nbsp;        locationDAO.add(loc10);</b>
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;
+<b class="fc"><i>57</i>&nbsp;        StopDAO stopDAO = getStopDAO();</b>
+<i>58</i>&nbsp;
+<b class="fc"><i>59</i>&nbsp;        Stop stop1 = new Stop(1, &quot;1? ?????&quot;, loc1);</b>
+<b class="fc"><i>60</i>&nbsp;        Stop stop2 = new Stop(2, &quot;2? ?????&quot;, loc2);</b>
+<b class="fc"><i>61</i>&nbsp;        Stop stop3 = new Stop(3, &quot;3? ?????&quot;, loc3);</b>
+<b class="fc"><i>62</i>&nbsp;        Stop stop4 = new Stop(4, &quot;4? ?????&quot;, loc4);</b>
+<b class="fc"><i>63</i>&nbsp;        Stop stop5 = new Stop(5, &quot;5? ?????&quot;, loc5);</b>
+<b class="fc"><i>64</i>&nbsp;        Stop stop6 = new Stop(6, &quot;6? ?????&quot;, loc6);</b>
+<b class="fc"><i>65</i>&nbsp;        Stop stop7 = new Stop(7, &quot;7? ?????&quot;, loc7);</b>
+<b class="fc"><i>66</i>&nbsp;        Stop stop8 = new Stop(8, &quot;8? ?????&quot;, loc8);</b>
+<b class="fc"><i>67</i>&nbsp;        Stop stop9 = new Stop(9, &quot;9? ?????&quot;, loc9);</b>
+<b class="fc"><i>68</i>&nbsp;        Stop stop10 = new Stop(10, &quot;10? ?????&quot;, loc10);</b>
+<i>69</i>&nbsp;
+<b class="fc"><i>70</i>&nbsp;        LegDAO legDAO = getLegDAO();</b>
+<i>71</i>&nbsp;
+<b class="fc"><i>72</i>&nbsp;        Leg leg1 = new Leg(200, stop1, stop2);</b>
+<b class="fc"><i>73</i>&nbsp;        Leg leg2 = new Leg(150, stop2, stop3);</b>
+<b class="fc"><i>74</i>&nbsp;        Leg leg3 = new Leg(300, stop3, stop4);</b>
+<b class="fc"><i>75</i>&nbsp;        Leg leg4 = new Leg(100, stop4, stop5);</b>
+<b class="fc"><i>76</i>&nbsp;        Leg leg5 = new Leg(250, stop5, stop6);</b>
+<b class="fc"><i>77</i>&nbsp;        Leg leg6 = new Leg(220, stop6, stop7);</b>
+<b class="fc"><i>78</i>&nbsp;        Leg leg7 = new Leg(170, stop7, stop8);</b>
+<b class="fc"><i>79</i>&nbsp;        Leg leg8 = new Leg(350, stop8, stop9);</b>
+<b class="fc"><i>80</i>&nbsp;        Leg leg9 = new Leg(190, stop9, stop10);</b>
+<i>81</i>&nbsp;
+<b class="fc"><i>82</i>&nbsp;        legDAO.add(leg1);</b>
+<b class="fc"><i>83</i>&nbsp;        legDAO.add(leg2);</b>
+<b class="fc"><i>84</i>&nbsp;        legDAO.add(leg3);</b>
+<b class="fc"><i>85</i>&nbsp;        legDAO.add(leg4);</b>
+<b class="fc"><i>86</i>&nbsp;        legDAO.add(leg5);</b>
+<b class="fc"><i>87</i>&nbsp;        legDAO.add(leg6);</b>
+<b class="fc"><i>88</i>&nbsp;        legDAO.add(leg7);</b>
+<b class="fc"><i>89</i>&nbsp;        legDAO.add(leg8);</b>
+<b class="fc"><i>90</i>&nbsp;        legDAO.add(leg9);</b>
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;
+<b class="fc"><i>93</i>&nbsp;        BusTimetableDAO busTimetableDAO = getBusTimetableDAO();</b>
+<i>94</i>&nbsp;
+<b class="fc"><i>95</i>&nbsp;        BusTimetable btt1 = new BusTimetable(new Time(05, 20, 00), &quot;???????&quot;);</b>
+<b class="fc"><i>96</i>&nbsp;        BusTimetable btt2 = new BusTimetable(new Time(05, 00, 00), &quot;?????&quot;);</b>
+<b class="fc"><i>97</i>&nbsp;        BusTimetable btt3 = new BusTimetable(new Time(05, 38, 00), &quot;???? ????&quot;);</b>
+<i>98</i>&nbsp;
+<b class="fc"><i>99</i>&nbsp;        busTimetableDAO.add(btt1);</b>
+<b class="fc"><i>100</i>&nbsp;        busTimetableDAO.add(btt2);</b>
+<i>101</i>&nbsp;
+<b class="fc"><i>102</i>&nbsp;        LineDAO lineDAO = getLineDAO();</b>
+<i>103</i>&nbsp;
+<b class="fc"><i>104</i>&nbsp;        Line line1 = new Line(&quot;???????&quot;, &quot;???????-????????&quot;);</b>
+<b class="fc"><i>105</i>&nbsp;        Line line2 = new Line(&quot;???????&quot;, &quot;?????????-????????&quot;);</b>
+<i>106</i>&nbsp;
+<i>107</i>&nbsp;
+<b class="fc"><i>108</i>&nbsp;        line1.addStop(stop1);</b>
+<b class="fc"><i>109</i>&nbsp;        stop1.addLine(line1);</b>
+<i>110</i>&nbsp;
+<b class="fc"><i>111</i>&nbsp;        line1.addStop(stop3);</b>
+<b class="fc"><i>112</i>&nbsp;        stop3.addLine(line1);</b>
+<i>113</i>&nbsp;
+<b class="fc"><i>114</i>&nbsp;        line1.addStop(stop5);</b>
+<b class="fc"><i>115</i>&nbsp;        stop5.addLine(line1);</b>
+<i>116</i>&nbsp;
+<b class="fc"><i>117</i>&nbsp;        line1.addStop(stop8);</b>
+<b class="fc"><i>118</i>&nbsp;        stop8.addLine(line1);</b>
+<i>119</i>&nbsp;
+<b class="fc"><i>120</i>&nbsp;        line1.addStop(stop7);</b>
+<b class="fc"><i>121</i>&nbsp;        stop7.addLine(line1);</b>
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;
+<b class="fc"><i>125</i>&nbsp;        line2.addStop(stop2);</b>
+<b class="fc"><i>126</i>&nbsp;        stop2.addLine(line2);</b>
+<i>127</i>&nbsp;
+<b class="fc"><i>128</i>&nbsp;        line2.addStop(stop4);</b>
+<b class="fc"><i>129</i>&nbsp;        stop4.addLine(line2);</b>
+<i>130</i>&nbsp;
+<b class="fc"><i>131</i>&nbsp;        line2.addStop(stop6);</b>
+<b class="fc"><i>132</i>&nbsp;        stop6.addLine(line2);</b>
+<i>133</i>&nbsp;
+<b class="fc"><i>134</i>&nbsp;        line2.addStop(stop9);</b>
+<b class="fc"><i>135</i>&nbsp;        stop9.addLine(line2);</b>
+<i>136</i>&nbsp;
+<b class="fc"><i>137</i>&nbsp;        line2.addStop(stop10);</b>
+<b class="fc"><i>138</i>&nbsp;        stop10.addLine(line2);</b>
+<i>139</i>&nbsp;
+<i>140</i>&nbsp;
+<b class="fc"><i>141</i>&nbsp;        line1.addBusTimetable(btt1);</b>
+<b class="fc"><i>142</i>&nbsp;        line2.addBusTimetable(btt2);</b>
+<b class="fc"><i>143</i>&nbsp;        line2.addBusTimetable(btt3);</b>
+<i>144</i>&nbsp;
+<b class="fc"><i>145</i>&nbsp;        lineDAO.add(line1);</b>
+<b class="fc"><i>146</i>&nbsp;        lineDAO.add(line2);</b>
+<i>147</i>&nbsp;
+<i>148</i>&nbsp;
+<i>149</i>&nbsp;
+<i>150</i>&nbsp;
+<b class="fc"><i>151</i>&nbsp;        stopDAO.add(stop1);</b>
+<b class="fc"><i>152</i>&nbsp;        stopDAO.add(stop2);</b>
+<b class="fc"><i>153</i>&nbsp;        stopDAO.add(stop3);</b>
+<b class="fc"><i>154</i>&nbsp;        stopDAO.add(stop4);</b>
+<b class="fc"><i>155</i>&nbsp;        stopDAO.add(stop5);</b>
+<b class="fc"><i>156</i>&nbsp;        stopDAO.add(stop6);</b>
+<b class="fc"><i>157</i>&nbsp;        stopDAO.add(stop7);</b>
+<b class="fc"><i>158</i>&nbsp;        stopDAO.add(stop8);</b>
+<b class="fc"><i>159</i>&nbsp;        stopDAO.add(stop9);</b>
+<b class="fc"><i>160</i>&nbsp;        stopDAO.add(stop10);</b>
+<i>161</i>&nbsp;
+<i>162</i>&nbsp;
+<i>163</i>&nbsp;
+<b class="fc"><i>164</i>&nbsp;    }</b>
+<i>165</i>&nbsp;
+<i>166</i>&nbsp;
+<i>167</i>&nbsp;    protected abstract BusTimetableDAO getBusTimetableDAO();
+<i>168</i>&nbsp;
+<i>169</i>&nbsp;    protected abstract LineDAO getLineDAO();
+<i>170</i>&nbsp;
+<i>171</i>&nbsp;    protected abstract StopDAO getStopDAO();
+<i>172</i>&nbsp;
+<i>173</i>&nbsp;    protected abstract LegDAO getLegDAO();
+<i>174</i>&nbsp;
+<i>175</i>&nbsp;    protected abstract LocationDAO getLocationDAO();
+<i>176</i>&nbsp;
+<i>177</i>&nbsp;
+<i>178</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-25 20:54</div>
+</div>
+</body>
+</html>

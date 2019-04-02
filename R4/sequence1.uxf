@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>594</x>
+      <y>189</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>: Line</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>207</y>
+      <w>27</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>198</x>
+      <y>144</y>
+      <w>90</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Διαχειριστής</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>207</y>
+      <w>27</w>
+      <h>477</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;510.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>234</x>
+      <y>243</y>
+      <w>18</w>
+      <h>423</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>324</x>
+      <y>189</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>: addLine</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>207</y>
+      <w>27</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>360</x>
+      <y>243</y>
+      <w>18</w>
+      <h>414</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>297</x>
+      <y>225</y>
+      <w>1008</w>
+      <h>459</h>
+    </coordinates>
+    <panel_attributes>loop
+--
+  
+  
+  
+  
+  
+   
+                                                                                                           
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                               
+                                                                                                                                                                                                                                                [for each bus line] 
+  
+  
+                                                                         
+                                                              </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>243</y>
+      <w>135</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1.Εισαγωγή γραμμής</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>81</x>
+      <y>63</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Εισαγωγή 
+λεωφορειακής 
+γραμμής
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>324</y>
+      <w>171</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+new BusTimeTable</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>675</x>
+      <y>189</y>
+      <w>171</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>: BusTimeTableDAOMemory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>729</x>
+      <y>207</y>
+      <w>27</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>882</x>
+      <y>189</y>
+      <w>144</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>: LineDAOMemory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>477</x>
+      <y>189</y>
+      <w>99</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>: BusTimetable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>207</y>
+      <w>27</w>
+      <h>459</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;490.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>522</x>
+      <y>333</y>
+      <w>18</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>252</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+new Line</panel_attributes>
+    <additional_attributes>290.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>621</x>
+      <y>261</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>729</x>
+      <y>396</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>945</x>
+      <y>288</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>945</x>
+      <y>207</y>
+      <w>27</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>387</y>
+      <w>378</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+add(new BusTimeTable)</panel_attributes>
+    <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>297</y>
+      <w>594</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+add(new Line)</panel_attributes>
+    <additional_attributes>640.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1053</x>
+      <y>189</y>
+      <w>144</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>: addStopToLine</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>459</y>
+      <w>765</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+startActivityForResult</panel_attributes>
+    <additional_attributes>830.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>207</y>
+      <w>27</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1116</x>
+      <y>468</y>
+      <w>18</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>477</y>
+      <w>261</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+onItemSelected(Stop stop, int id)</panel_attributes>
+    <additional_attributes>20.0;40.0;70.0;40.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1125</x>
+      <y>486</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>513</y>
+      <w>765</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+stopsToAdd</panel_attributes>
+    <additional_attributes>11.0;20.0;830.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>369</x>
+      <y>576</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>369</x>
+      <y>450</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>441</y>
+      <w>315</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+line.addBusTimetable(New BusTimeTable)</panel_attributes>
+    <additional_attributes>20.0;20.0;70.0;20.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>567</y>
+      <w>180</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+line.addStop(Stop)</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>612</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+stop.addLine(New Line)</panel_attributes>
+    <additional_attributes>10.0;20.0;70.0;20.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>369</x>
+      <y>621</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>333</x>
+      <y>549</y>
+      <w>270</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>loop    
+--
+
+ 
+                
+                  
+                  
+                  
+                         
+                                   for(Stop stop:stopsToAdd)
+                            </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>630</y>
+      <w>135</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1."Η εισαγωγή 
+ήταν επιτυχής"</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1035</x>
+      <y>441</y>
+      <w>225</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>loop    
+--
+
+ 
+                
+                  
+                  
+                  
+                         
+                    for any 
+                                   number of stops 
+                      we want
+                            </panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,30 @@
+Lines of code metrics,Fri, 25 May 2018 21:38:14 EEST
+Package,LOC,LOC(rec),LOCp,LOCp(rec),LOCt,LOCt(rec)
+"",n/a,"3,192",n/a,"2,397",n/a,795
+"gr",n/a,"3,192",n/a,"2,397",n/a,795
+"gr.aueb",n/a,"3,192",n/a,"2,397",n/a,795
+"gr.aueb.softeng",n/a,"3,192",n/a,"2,397",n/a,795
+"gr.aueb.softeng.project1806",21,"3,192",0,"2,397",21,795
+"gr.aueb.softeng.project1806.dao",562,562,289,289,273,273
+"gr.aueb.softeng.project1806.memorydao",201,201,201,201,0,0
+"gr.aueb.softeng.project1806.model","1,065","1,065",564,564,501,501
+"gr.aueb.softeng.project1806.presenter",77,77,77,77,0,0
+"gr.aueb.softeng.project1806.view","1,266","1,266","1,266","1,266",0,0
+
+Module,L(Groovy),L(HTML),L(J),L(KT),L(XML),LOC,LOCp,LOCt,NCLOC,NCLOCp,NCLOCt
+"app",28,0,"3,192",0,"1,778","5,017","4,098",795,"4,353","3,594",636
+"project1806",22,"75,377",0,0,0,"80,054",0,0,"75,521",0,0
+
+FileType,LOC,NCLOC
+"CSS",116,116
+"Groovy",50,49
+"HTML","75,377","75,377"
+"Java","3,192","2,529"
+"ProGuard Rules Language File",18,18
+"Properties",27,7
+"Text","4,513",n/a
+"XML","1,778","1,778"
+
+Project,L(Groovy),L(HTML),L(J),L(KT),L(XML),LOC,LOCp,LOCt,NCLOC,NCLOCp,NCLOCt
+"project",50,"75,377","3,192",0,"1,778","85,071","4,098",795,"79,874","3,594",636
+

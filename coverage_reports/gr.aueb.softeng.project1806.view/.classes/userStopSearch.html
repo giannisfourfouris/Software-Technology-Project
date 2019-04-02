@@ -1,0 +1,263 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: userStopSearch</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1806.view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: userStopSearch (gr.aueb.softeng.project1806.view)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">userStopSearch</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 19)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">userStopSearch$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 15)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">userStopSearch$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">userStopSearch$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 43)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1806.view;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Intent;
+<i>4</i>&nbsp;import android.location.Location;
+<i>5</i>&nbsp;import android.support.v7.app.AppCompatActivity;
+<i>6</i>&nbsp;import android.os.Bundle;
+<i>7</i>&nbsp;import android.view.View;
+<i>8</i>&nbsp;import android.widget.Button;
+<i>9</i>&nbsp;import android.widget.EditText;
+<i>10</i>&nbsp;import android.widget.Toast;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;import com.google.android.gms.location.FusedLocationProviderClient;
+<i>13</i>&nbsp;import com.google.android.gms.location.LocationServices;
+<i>14</i>&nbsp;import com.google.android.gms.tasks.OnSuccessListener;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;import gr.aueb.softeng.project1806.R;
+<i>17</i>&nbsp;import gr.aueb.softeng.project1806.model.Stop;
+<i>18</i>&nbsp;import gr.aueb.softeng.project1806.presenter.StopSearchPresenter;
+<i>19</i>&nbsp;
+<b class="nc"><i>20</i>&nbsp;public class userStopSearch extends AppCompatActivity {</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    private FusedLocationProviderClient mFusedLocationClient;
+<i>23</i>&nbsp;    EditText edtStopSearch;
+<i>24</i>&nbsp;    public static final String STOP_INFO_EXTRA = &quot;info&quot;;
+<i>25</i>&nbsp;    public static final int REQUEST_CODE_STOP_SEARCH = 1;
+<i>26</i>&nbsp;    public static final String LOCATION_LONGITUDE = &quot;longitude&quot;;
+<i>27</i>&nbsp;    public static final String LOCATION_LATITUDE = &quot;latitude&quot;;
+<i>28</i>&nbsp;    Button userSearchStopButton;
+<i>29</i>&nbsp;    double longitude,latitude;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    @Override
+<i>32</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>33</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>34</i>&nbsp;        setContentView(R.layout.activity_user_stop_search);</b>
+<b class="nc"><i>35</i>&nbsp;        edtStopSearch=(EditText)findViewById(R.id.userInputInfoText2);</b>
+<b class="nc"><i>36</i>&nbsp;        userSearchStopButton=(Button) findViewById(R.id.userSearchStopButton);</b>
+<i>37</i>&nbsp;
+<b class="nc"><i>38</i>&nbsp;        userSearchStopButton.setOnClickListener(new View.OnClickListener() {</b>
+<i>39</i>&nbsp;            @Override
+<i>40</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i>41</i>&nbsp;                String s = edtStopSearch.getText().toString().trim().toLowerCase();</b>
+<b class="nc"><i>42</i>&nbsp;                StopSearchPresenter presenter=new StopSearchPresenter();</b>
+<b class="nc"><i>43</i>&nbsp;                if(!isInteger(s)) {</b>
+<b class="nc"><i>44</i>&nbsp;                    Stop stop = presenter.searchStopByName(s);</b>
+<b class="nc"><i>45</i>&nbsp;                    if (stop != null) {</b>
+<b class="nc"><i>46</i>&nbsp;                        searchStop(s);</b>
+<b class="nc"><i>47</i>&nbsp;                    } else if (stop == null) {</b>
+<b class="nc"><i>48</i>&nbsp;                        Toast.makeText(getApplicationContext(), &quot;? ????? ??? ???????&quot;, Toast.LENGTH_SHORT).show();</b>
+<i>49</i>&nbsp;                    }
+<b class="nc"><i>50</i>&nbsp;                }else{</b>
+<b class="nc"><i>51</i>&nbsp;                    Stop stop = presenter.searchStopById(s);</b>
+<b class="nc"><i>52</i>&nbsp;                    if (stop != null) {</b>
+<b class="nc"><i>53</i>&nbsp;                      searchStop(s);</b>
+<b class="nc"><i>54</i>&nbsp;                    } else if (stop == null) {</b>
+<b class="nc"><i>55</i>&nbsp;                        Toast.makeText(getApplicationContext(), &quot;? ????? ??? ???????&quot;, Toast.LENGTH_SHORT).show();</b>
+<i>56</i>&nbsp;                    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;                }
+<i>59</i>&nbsp;            }
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;        });
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;
+<b class="nc"><i>66</i>&nbsp;        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);</b>
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;        try {
+<b class="nc"><i>69</i>&nbsp;            mFusedLocationClient.getLastLocation()</b>
+<b class="nc"><i>70</i>&nbsp;                    .addOnSuccessListener(this, new OnSuccessListener&lt;Location&gt;() {</b>
+<i>71</i>&nbsp;                        @Override
+<i>72</i>&nbsp;                        public void onSuccess(Location location) {
+<b class="nc"><i>73</i>&nbsp;                            if (location != null) {</b>
+<b class="nc"><i>74</i>&nbsp;                                longitude=location.getLongitude();</b>
+<b class="nc"><i>75</i>&nbsp;                                latitude=location.getLatitude();</b>
+<i>76</i>&nbsp;                            }
+<i>77</i>&nbsp;                        }
+<i>78</i>&nbsp;                    });
+<i>79</i>&nbsp;        }
+<b class="nc"><i>80</i>&nbsp;        catch (SecurityException e){}</b>
+<i>81</i>&nbsp;
+<i>82</i>&nbsp;
+<b class="nc"><i>83</i>&nbsp;        Button locButton = (Button) findViewById(R.id.locButton);</b>
+<b class="nc"><i>84</i>&nbsp;        locButton.setOnClickListener(new View.OnClickListener() {</b>
+<i>85</i>&nbsp;            @Override
+<i>86</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>87</i>&nbsp;                Intent myIntent = new Intent(v.getContext(), userStopSearchByLocResult.class);</b>
+<b class="nc"><i>88</i>&nbsp;                myIntent.putExtra(LOCATION_LONGITUDE,longitude);</b>
+<b class="nc"><i>89</i>&nbsp;                myIntent.putExtra(LOCATION_LATITUDE, latitude);</b>
+<b class="nc"><i>90</i>&nbsp;                startActivityForResult(myIntent, 0);</b>
+<i>91</i>&nbsp;            }
+<i>92</i>&nbsp;        });
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;        //https://developer.android.com/training/location/retrieve-current#java
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;    }
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;
+<i>100</i>&nbsp;
+<i>101</i>&nbsp;
+<i>102</i>&nbsp;
+<i>103</i>&nbsp;    public boolean isInteger(String input){
+<i>104</i>&nbsp;        try{
+<b class="nc"><i>105</i>&nbsp;            Integer.parseInt(input.trim());</b>
+<b class="nc"><i>106</i>&nbsp;            return true;</b>
+<b class="nc"><i>107</i>&nbsp;        }catch (Exception e){</b>
+<b class="nc"><i>108</i>&nbsp;            return false;</b>
+<i>109</i>&nbsp;        }
+<i>110</i>&nbsp;    }
+<i>111</i>&nbsp;    public void searchStop(String stopInfo){
+<b class="nc"><i>112</i>&nbsp;        Intent intent = new Intent(this, userStopSearchResult.class);</b>
+<b class="nc"><i>113</i>&nbsp;        intent.putExtra(STOP_INFO_EXTRA,stopInfo);</b>
+<b class="nc"><i>114</i>&nbsp;        startActivityForResult(intent, REQUEST_CODE_STOP_SEARCH);</b>
+<i>115</i>&nbsp;    }
+<i>116</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-25 20:54</div>
+</div>
+</body>
+</html>

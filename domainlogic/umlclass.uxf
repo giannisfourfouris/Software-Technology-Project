@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <help_text/>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>88</x>
+      <y>104</y>
+      <w>304</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Στάση
+--
+#κωδικός:int
+-ονομασία:String
+-τοποθεσία:Τοποθεσία
+--
++getStopID(): int
++setStopID(code: int): void
++getStopName(): String
++setStopName(stopName: String): void
++getStopLocation(): Location
++setStopLocation(location: Location): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>40</y>
+      <w>216</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Λεωφορειακή γραμμή
+--
+#κωδικός:String
+-ονομασία:String
+--
++getLineCode(): String
++setLineCode(lineCode: String): void  
++getLineName(): String
++setLineName(lineName: String): void  
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>448</y>
+      <w>432</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Τοποθεσία
+--
+-γεωγραφικόΠλάτος:double
+-γεωγραφικόΜήκος:double
+--
++getLongitude(): Double
++setLongitude(longitude: double): void
++getLatitude(): Double
++setLatitude(latitude: double): void
++distanceBetweenLocations(location1 :Location, location2:Location):Double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>144</y>
+      <w>232</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=0..*
+m2=1..1
+στάση αφετηρίας</panel_attributes>
+    <additional_attributes>250.0;10.0;250.0;160.0;10.0;160.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>240</y>
+      <w>88</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=1..1
+m2=1..1
+σχετίζεταιΜε</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>304</y>
+      <w>168</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Σκέλος
+--
+-μήκος:int
+--
++getLength(): int
++setLength(length: int): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>824</x>
+      <y>40</y>
+      <w>240</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Δρομολόγιο
+--
+-ώραΈναρξηςΑποΑφετηρία:Time
+-ημέρα:Day
+--
++getTimeFromStart(): Time
++setTimeFromStart(timeForStart: Time): void
++getDay(): Day
++setDay(day: Day): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>896</x>
+      <y>136</y>
+      <w>80</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1..*
+αποτελείται</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>136</y>
+      <w>512</w>
+      <h>328</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..1
+m2=1..*
+       
+       
+       
+      
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   στάση έναρξης 
+       
+       
+       
+       
+       
+       
+       
+    
+   
+                         </panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;260.0;620.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>96</y>
+      <w>144</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1..1
+m2=1..*
+ακολουθεί</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>520</y>
+      <w>168</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt; Time
+--
+time:String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>856</x>
+      <y>520</y>
+      <w>168</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt; Day
+--
+ΔΕΥΤΕΡΑ
+ΤΡΙΤΗ
+ΤΕΤΑΡΤΗ
+ΠΕΜΠΤΗ
+ΠΑΡΑΣΚΕΥΗ
+ΣΑΒΒΑΤΟ
+ΚΥΡΙΑΚΗ</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>144</y>
+      <w>368</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=0..*
+m2=1..1
+
+στάση προορισμού</panel_attributes>
+    <additional_attributes>420.0;10.0;420.0;180.0;10.0;180.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>240</y>
+      <w>552</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..1
+m2=1..*
+                   
+           
+                        
+                          
+                          
+                          
+                          
+                          
+        στάση προορισμού</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0;670.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>144</y>
+      <w>192</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1..*
+περιέχει</panel_attributes>
+    <additional_attributes>170.0;10.0;170.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+</diagram>

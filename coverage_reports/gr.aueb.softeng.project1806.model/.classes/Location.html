@@ -1,0 +1,179 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Location</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1806.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Location (gr.aueb.softeng.project1806.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Location</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (24/ 24)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1806.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import java.io.Serializable;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;/**
+<i>7</i>&nbsp; * ??? ????????? ??? ?? ?????????? ???????.
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;public class Location implements Serializable{
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    double longitude, latitude;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;     * ????????????? ??? ??????? ?? ???????????
+<i>16</i>&nbsp;     * ?? ?????????? ????? ??? ?????? ??? ??????????.
+<i>17</i>&nbsp;     *
+<i>18</i>&nbsp;     * @param longitude ?????????? ?????.
+<i>19</i>&nbsp;     * @param latitude  ?????????? ??????.
+<i>20</i>&nbsp;     */
+<b class="fc"><i>21</i>&nbsp;    public Location(double longitude, double latitude) {</b>
+<b class="fc"><i>22</i>&nbsp;        this.longitude = longitude;</b>
+<b class="fc"><i>23</i>&nbsp;        this.latitude = latitude;</b>
+<b class="fc"><i>24</i>&nbsp;    }</b>
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    /**
+<i>28</i>&nbsp;     * ?????????? ?? ?????????? ????? ??? ??????????.
+<i>29</i>&nbsp;     *
+<i>30</i>&nbsp;     * @return ?? ?????????? ?????.
+<i>31</i>&nbsp;     */
+<i>32</i>&nbsp;    public double getLongitude() {
+<b class="fc"><i>33</i>&nbsp;        return longitude;</b>
+<i>34</i>&nbsp;    }
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    /**
+<i>37</i>&nbsp;     * ????? ?? ?????????? ????? ??? ??????????.
+<i>38</i>&nbsp;     *
+<i>39</i>&nbsp;     * @param longitude ?? ?????????? ?????.
+<i>40</i>&nbsp;     */
+<i>41</i>&nbsp;    public void setLongitude(double longitude) {
+<b class="fc"><i>42</i>&nbsp;        this.longitude = longitude;</b>
+<b class="fc"><i>43</i>&nbsp;    }</b>
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    /**
+<i>46</i>&nbsp;     * ?????????? ?? ?????????? ?????? ??? ??????????.
+<i>47</i>&nbsp;     *
+<i>48</i>&nbsp;     * @return ?? ?????????? ??????.
+<i>49</i>&nbsp;     */
+<i>50</i>&nbsp;    public double getLatitude() {
+<b class="fc"><i>51</i>&nbsp;        return latitude;</b>
+<i>52</i>&nbsp;    }
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;    /**
+<i>56</i>&nbsp;     * ????? ?? ?????????? ?????? ??? ??????????.
+<i>57</i>&nbsp;     *
+<i>58</i>&nbsp;     * @param latitude ?? ?????????? ??????.
+<i>59</i>&nbsp;     */
+<i>60</i>&nbsp;    public void setLatitude(double latitude) {
+<b class="fc"><i>61</i>&nbsp;        this.latitude = latitude;</b>
+<b class="fc"><i>62</i>&nbsp;    }</b>
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    /**
+<i>66</i>&nbsp;     * ?????????? ??? ????????(?? ?????) ??????
+<i>67</i>&nbsp;     * ??? ??????????, ???????? ?? ????????? ??? ?????????.
+<i>68</i>&nbsp;     *
+<i>69</i>&nbsp;     * @param point ? ??? ?? ??? ??? ??????????.
+<i>70</i>&nbsp;     * @return ??? ???????? ?????? ??? ??????????.
+<i>71</i>&nbsp;     */
+<i>72</i>&nbsp;    public double distanceBetweenLocations(Location point) {
+<i>73</i>&nbsp;
+<i>74</i>&nbsp;        double lat1, lon1, lat2, lon2;
+<i>75</i>&nbsp;
+<b class="fc"><i>76</i>&nbsp;        lat1 = this.getLatitude();</b>
+<b class="fc"><i>77</i>&nbsp;        lon1 = this.getLongitude();</b>
+<b class="fc"><i>78</i>&nbsp;        lat2 = point.getLatitude();</b>
+<b class="fc"><i>79</i>&nbsp;        lon2 = point.getLongitude();</b>
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;
+<b class="fc"><i>82</i>&nbsp;        final int R = 6371; // Radius of the earth</b>
+<i>83</i>&nbsp;
+<b class="fc"><i>84</i>&nbsp;        double latDistance = Math.toRadians(lat2 - lat1);</b>
+<b class="fc"><i>85</i>&nbsp;        double lonDistance = Math.toRadians(lon2 - lon1);</b>
+<b class="fc"><i>86</i>&nbsp;        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)</b>
+<b class="fc"><i>87</i>&nbsp;                + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2))</b>
+<b class="fc"><i>88</i>&nbsp;                * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);</b>
+<b class="fc"><i>89</i>&nbsp;        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));</b>
+<b class="fc"><i>90</i>&nbsp;        double distance = R * c * 1000; // convert to meters</b>
+<i>91</i>&nbsp;
+<b class="fc"><i>92</i>&nbsp;        distance = Math.round(distance);</b>
+<i>93</i>&nbsp;
+<b class="fc"><i>94</i>&nbsp;        return distance;</b>
+<i>95</i>&nbsp;    }
+<i>96</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-25 20:54</div>
+</div>
+</body>
+</html>

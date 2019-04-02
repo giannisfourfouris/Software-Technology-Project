@@ -1,0 +1,200 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: addStopsToLine</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1806.view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: addStopsToLine (gr.aueb.softeng.project1806.view)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">addStopsToLine</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 25)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">addStopsToLine$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 8)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 33)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1806.view;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Intent;
+<i>4</i>&nbsp;import android.support.v7.app.AppCompatActivity;
+<i>5</i>&nbsp;import android.os.Bundle;
+<i>6</i>&nbsp;import android.support.v7.widget.LinearLayoutManager;
+<i>7</i>&nbsp;import android.support.v7.widget.RecyclerView;
+<i>8</i>&nbsp;import android.view.View;
+<i>9</i>&nbsp;import android.widget.Button;
+<i>10</i>&nbsp;import android.widget.Toast;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;import java.util.ArrayList;
+<i>13</i>&nbsp;import java.util.List;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;import gr.aueb.softeng.project1806.R;
+<i>16</i>&nbsp;import gr.aueb.softeng.project1806.memorydao.StopDAOMemory;
+<i>17</i>&nbsp;import gr.aueb.softeng.project1806.model.Location;
+<i>18</i>&nbsp;import gr.aueb.softeng.project1806.model.Stop;
+<i>19</i>&nbsp;import gr.aueb.softeng.project1806.presenter.ItemSelectionListener;
+<i>20</i>&nbsp;
+<b class="nc"><i>21</i>&nbsp;public class addStopsToLine extends AppCompatActivity implements ItemSelectionListener&lt;Stop&gt; {</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    public static final String STOPS_TO_ADD_EXTRA = &quot;Stops to add to Line&quot;;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    Button btnSaveStopsToLine;
+<b class="nc"><i>26</i>&nbsp;    ArrayList&lt;Stop&gt; stopsToAdd = new ArrayList&lt;Stop&gt;();</b>
+<i>27</i>&nbsp;    ArrayList&lt;String&gt; test;
+<i>28</i>&nbsp;    RecyclerView recyclerView;
+<i>29</i>&nbsp;    private StopAdapter mAdapter;
+<i>30</i>&nbsp;    private RecyclerView.LayoutManager mLayoutManager;
+<i>31</i>&nbsp;    private StopDAOMemory stopDAOMemory;
+<b class="nc"><i>32</i>&nbsp;    Stop stop = new Stop(11, &quot;11hstash&quot;, new Location(43.12212,23.232332));</b>
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    @Override
+<i>35</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>36</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>37</i>&nbsp;        setContentView(R.layout.activity_add_stops_to_line);</b>
+<b class="nc"><i>38</i>&nbsp;        Intent intent = getIntent();</b>
+<i>39</i>&nbsp;
+<b class="nc"><i>40</i>&nbsp;        test = new ArrayList&lt;String&gt;();</b>
+<b class="nc"><i>41</i>&nbsp;        stopsToAdd = new ArrayList&lt;Stop&gt;();</b>
+<b class="nc"><i>42</i>&nbsp;        stopDAOMemory = new StopDAOMemory();</b>
+<b class="nc"><i>43</i>&nbsp;        List&lt;Stop&gt; stops = stopDAOMemory.findAll();</b>
+<b class="nc"><i>44</i>&nbsp;        btnSaveStopsToLine = (Button) findViewById(R.id.SaveStopsToLineButton);</b>
+<i>45</i>&nbsp;
+<b class="nc"><i>46</i>&nbsp;        recyclerView = (RecyclerView) findViewById(R.id.rvLines);</b>
+<i>47</i>&nbsp;        // use this setting to improve performance if you know that changes
+<i>48</i>&nbsp;        // in content do not change the layout size of the RecyclerView
+<b class="nc"><i>49</i>&nbsp;        recyclerView.setHasFixedSize(true);</b>
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;        // use a linear layout manager
+<b class="nc"><i>52</i>&nbsp;        mLayoutManager = new LinearLayoutManager(this);</b>
+<b class="nc"><i>53</i>&nbsp;        recyclerView.setLayoutManager(mLayoutManager);</b>
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;        // specify an adapter (see also next example)
+<b class="nc"><i>56</i>&nbsp;        mAdapter = new StopAdapter(new ArrayList&lt;Stop&gt;(stops));</b>
+<b class="nc"><i>57</i>&nbsp;        recyclerView.setAdapter(mAdapter);</b>
+<i>58</i>&nbsp;        // register the current activity as listener for book selection events
+<b class="nc"><i>59</i>&nbsp;        mAdapter.setStopSelectionListener(this);</b>
+<i>60</i>&nbsp;
+<b class="nc"><i>61</i>&nbsp;        btnSaveStopsToLine.setOnClickListener(new View.OnClickListener() {</b>
+<i>62</i>&nbsp;            @Override
+<i>63</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>64</i>&nbsp;                if(stopsToAdd.size() &gt;= 3){</b>
+<b class="nc"><i>65</i>&nbsp;                    Intent intent = new Intent();</b>
+<b class="nc"><i>66</i>&nbsp;                    intent.putExtra(STOPS_TO_ADD_EXTRA, stopsToAdd);</b>
+<b class="nc"><i>67</i>&nbsp;                    setResult(RESULT_OK, intent);</b>
+<b class="nc"><i>68</i>&nbsp;                    finish();</b>
+<b class="nc"><i>69</i>&nbsp;                } else{</b>
+<b class="nc"><i>70</i>&nbsp;                    Toast.makeText(getApplicationContext(), &quot;? ?????? ??? ?????? ?? ???? ???????? ??? 3 ???????&quot;, Toast.LENGTH_SHORT).show();</b>
+<i>71</i>&nbsp;                }
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;            }
+<i>74</i>&nbsp;        });
+<i>75</i>&nbsp;    }
+<i>76</i>&nbsp;
+<i>77</i>&nbsp;
+<i>78</i>&nbsp;
+<i>79</i>&nbsp;    @Override
+<i>80</i>&nbsp;    public void onItemSelected(Stop stop, int id){
+<b class="nc"><i>81</i>&nbsp;        if (id == R.id.TempAddStopButton){</b>
+<b class="nc"><i>82</i>&nbsp;            stopsToAdd.add(stop);</b>
+<b class="nc"><i>83</i>&nbsp;            Toast.makeText(this, &quot;????? : &quot; + stop.getStopName() + &quot; ??????????&quot;, Toast.LENGTH_SHORT).show();</b>
+<i>84</i>&nbsp;        }
+<b class="nc"><i>85</i>&nbsp;        else if(id == R.id.TempRemoveStopButton){</b>
+<b class="nc"><i>86</i>&nbsp;            stopsToAdd.remove(stop);</b>
+<b class="nc"><i>87</i>&nbsp;            Toast.makeText(this, &quot;????? : &quot; + stop.getStopName() + &quot; ??????????&quot;, Toast.LENGTH_SHORT).show();</b>
+<i>88</i>&nbsp;        }
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;    }
+<i>91</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-25 20:54</div>
+</div>
+</body>
+</html>

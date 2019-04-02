@@ -1,0 +1,168 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Home</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1806.view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Home (gr.aueb.softeng.project1806.view)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Home</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Home$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Home$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 15)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1806.view;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Intent;
+<i>4</i>&nbsp;import android.support.v7.app.AppCompatActivity;
+<i>5</i>&nbsp;import android.os.Bundle;
+<i>6</i>&nbsp;import android.view.View;
+<i>7</i>&nbsp;import android.widget.Button;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import gr.aueb.softeng.project1806.R;
+<i>10</i>&nbsp;import gr.aueb.softeng.project1806.dao.Initializer;
+<i>11</i>&nbsp;import gr.aueb.softeng.project1806.memorydao.MemoryInitializer;
+<i>12</i>&nbsp;
+<b class="nc"><i>13</i>&nbsp;public class Home extends AppCompatActivity {</b>
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    @Override
+<i>16</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>17</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>18</i>&nbsp;        setContentView(R.layout.activity_home);</b>
+<b class="nc"><i>19</i>&nbsp;        Initializer dataHelper = new MemoryInitializer();</b>
+<b class="nc"><i>20</i>&nbsp;        dataHelper.prepareData();</b>
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;        Button goToAdminOptions = (Button) findViewById(R.id.adminButton);</b>
+<b class="nc"><i>23</i>&nbsp;        goToAdminOptions.setOnClickListener(new View.OnClickListener() {</b>
+<i>24</i>&nbsp;            @Override
+<i>25</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>26</i>&nbsp;                Intent myIntent = new Intent(v.getContext(), adminOptions.class);</b>
+<b class="nc"><i>27</i>&nbsp;                startActivityForResult(myIntent, 0);</b>
+<i>28</i>&nbsp;            }
+<i>29</i>&nbsp;        });
+<i>30</i>&nbsp;
+<b class="nc"><i>31</i>&nbsp;        Button goToUserOptions = (Button) findViewById(R.id.userButton);</b>
+<b class="nc"><i>32</i>&nbsp;        goToUserOptions.setOnClickListener(new View.OnClickListener() {</b>
+<i>33</i>&nbsp;            @Override
+<i>34</i>&nbsp;            public void onClick(View v) {
+<b class="nc"><i>35</i>&nbsp;                Intent myIntent = new Intent(v.getContext(), userOptions.class);</b>
+<b class="nc"><i>36</i>&nbsp;                startActivityForResult(myIntent, 0);</b>
+<i>37</i>&nbsp;            }
+<i>38</i>&nbsp;        });
+<i>39</i>&nbsp;    }
+<i>40</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-25 20:54</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: userLineSearchResult</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1806.view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: userLineSearchResult (gr.aueb.softeng.project1806.view)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">userLineSearchResult</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 25)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1806.view;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Intent;
+<i>4</i>&nbsp;import android.support.v7.app.AppCompatActivity;
+<i>5</i>&nbsp;import android.os.Bundle;
+<i>6</i>&nbsp;import android.widget.ArrayAdapter;
+<i>7</i>&nbsp;import android.widget.Button;
+<i>8</i>&nbsp;import android.widget.ListView;
+<i>9</i>&nbsp;import android.widget.TextView;
+<i>10</i>&nbsp;import android.widget.Toast;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;import java.util.ArrayList;
+<i>13</i>&nbsp;import java.util.HashSet;
+<i>14</i>&nbsp;import java.util.Iterator;
+<i>15</i>&nbsp;import java.util.List;
+<i>16</i>&nbsp;import java.util.Set;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;import gr.aueb.softeng.project1806.R;
+<i>19</i>&nbsp;import gr.aueb.softeng.project1806.memorydao.BusTimetableDAOMemory;
+<i>20</i>&nbsp;import gr.aueb.softeng.project1806.memorydao.LineDAOMemory;
+<i>21</i>&nbsp;import gr.aueb.softeng.project1806.memorydao.StopDAOMemory;
+<i>22</i>&nbsp;import gr.aueb.softeng.project1806.model.BusTimetable;
+<i>23</i>&nbsp;import gr.aueb.softeng.project1806.model.Line;
+<i>24</i>&nbsp;import gr.aueb.softeng.project1806.model.Stop;
+<i>25</i>&nbsp;import gr.aueb.softeng.project1806.presenter.LineSearchPresenter;
+<i>26</i>&nbsp;
+<b class="nc"><i>27</i>&nbsp;public class userLineSearchResult extends AppCompatActivity {</b>
+<i>28</i>&nbsp;    LineSearchPresenter presenter;
+<i>29</i>&nbsp;    Line line;
+<i>30</i>&nbsp;    TextView nameLine;
+<i>31</i>&nbsp;    ListView listBtt, listStop;
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    @Override
+<i>34</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>35</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>36</i>&nbsp;        setContentView(R.layout.activity_user_line_search_result);</b>
+<b class="nc"><i>37</i>&nbsp;        presenter = new LineSearchPresenter();</b>
+<i>38</i>&nbsp;
+<b class="nc"><i>39</i>&nbsp;        Intent intent = getIntent();</b>
+<b class="nc"><i>40</i>&nbsp;        String info = intent.getStringExtra(userLineSearch.LINE_INFO_EXTRA).trim().toLowerCase();</b>
+<b class="nc"><i>41</i>&nbsp;        line = presenter.searchLine(info);</b>
+<b class="nc"><i>42</i>&nbsp;        nameLine = (TextView) findViewById(R.id.stopNameText);</b>
+<b class="nc"><i>43</i>&nbsp;        listBtt = (ListView) findViewById(R.id.bttLineList);</b>
+<b class="nc"><i>44</i>&nbsp;        listStop = (ListView) findViewById(R.id.stopLinelist);</b>
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;
+<b class="nc"><i>48</i>&nbsp;        nameLine.setText(line.getLineCode() + &quot; &quot; + line.getLineName());</b>
+<b class="nc"><i>49</i>&nbsp;        Set&lt;Stop&gt; stopList = line.getStops();</b>
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;
+<b class="nc"><i>52</i>&nbsp;        ArrayList&lt;String&gt; StringStop = new ArrayList&lt;String&gt;();</b>
+<b class="nc"><i>53</i>&nbsp;        for (Stop stop : stopList) {</b>
+<i>54</i>&nbsp;
+<b class="nc"><i>55</i>&nbsp;            StringStop.add(&quot;•&quot; + stop.getStopName().toString());</b>
+<b class="nc"><i>56</i>&nbsp;        }</b>
+<i>57</i>&nbsp;
+<b class="nc"><i>58</i>&nbsp;        ArrayAdapter&lt;String&gt; stops = new ArrayAdapter&lt;String&gt;(this, android.R.layout.simple_list_item_1, StringStop);</b>
+<b class="nc"><i>59</i>&nbsp;        listStop.setAdapter(stops);</b>
+<i>60</i>&nbsp;
+<b class="nc"><i>61</i>&nbsp;        Set&lt;BusTimetable&gt; bttList = line.getTimetables();</b>
+<i>62</i>&nbsp;
+<b class="nc"><i>63</i>&nbsp;        ArrayList&lt;String&gt; StringBtt = new ArrayList&lt;String&gt;();</b>
+<b class="nc"><i>64</i>&nbsp;        for (BusTimetable btt : bttList) {</b>
+<b class="nc"><i>65</i>&nbsp;            StringBtt.add(btt.getStartTimeFromStart().toString());</b>
+<b class="nc"><i>66</i>&nbsp;        }</b>
+<i>67</i>&nbsp;
+<b class="nc"><i>68</i>&nbsp;        ArrayAdapter&lt;String&gt; btts = new ArrayAdapter&lt;String&gt;(this, android.R.layout.simple_list_item_1, StringBtt);</b>
+<b class="nc"><i>69</i>&nbsp;        listBtt.setAdapter(btts);</b>
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    }
+<i>73</i>&nbsp;
+<i>74</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-25 20:54</div>
+</div>
+</body>
+</html>
